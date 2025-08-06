@@ -8,7 +8,7 @@ initial begin
   month = month.first;
   $display("Month first = %0d",month);   
   for(int i=0;i<7;i++) begin
-    $display("Month name =%0s  and its default value is = %0d",month.name,month);
+    $display("Month name =%0d  and its default value is = %0d",month.name,month);
     month = month.next;
   end
   $display("Month next = %0d",month.name);
