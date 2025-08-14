@@ -4,7 +4,6 @@ module tb_fifo_sync();
 	parameter DATA_WIDTH = 32;
     reg clk = 0; 
     reg rst_n;
-    reg cs;	 
     reg wr_en;
     reg rd_en;
     reg [DATA_WIDTH-1:0] data_in;
@@ -18,37 +17,36 @@ module tb_fifo_sync();
   syncfifo 
   #(.FIFO_DEPTH(FIFO_DEPTH), .DATA_WIDTH(DATA_WIDTH))
   dut
-  (.clk     (clk     ), 
-   .rst_n   (rst_n   ),
-   .cs      (cs      ),	 
-   .wr_en   (wr_en   ), 
-   .rd_en   (rd_en   ), 
-   .data_in (data_in ), 
+  (.clk     (clk), 
+   .rst_n   (rst_n), 
+   .wr_en   (wr_en), 
+   .rd_en   (rd_en), 
+   .data_in (data_in), 
    .data_out(data_out), 
-   .empty   (empty   ),
-   .full    (full    ));
+   .empty   (empty),
+   .full    (full));
 
   always begin #5 clk = ~clk; end
   
     task write_data(input [DATA_WIDTH-1:0] d_in);
 	    begin
 		    @(posedge clk);
-			cs = 1; wr_en = 1;
+			wr_en = 1;
 			data_in = d_in;
 			$display($time, " write_data data_in = %0d", data_in);
 			@(posedge clk);
-		    cs = 1; wr_en = 0;
+		    wr_en = 0;
 		end
 	endtask
 	
 	task read_data();
 	    begin
 		    @(posedge clk);
-			cs = 1; rd_en = 1;
+			rd_en = 1;
 			@(posedge clk);
 			//#1;
 		    $display($time, " read_data data_out = %0d", data_out);
-		    cs = 1; rd_en = 0;
+		    rd_en = 0;
 		end
 	endtask
 	
@@ -82,8 +80,9 @@ module tb_fifo_sync();
 	end
   
   initial begin
-    $dumpfile("dump.vcd");
-    $dumpvars;
+    $dumpfile("dump.vcd"); 
+    $dumpvars();
   end
 endmodule
+
 
