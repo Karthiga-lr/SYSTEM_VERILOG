@@ -1,5 +1,5 @@
 module packed_without_typedef;
-  struct{
+  struct packed{
     bit [15:0] id;
     logic [15:0]contact_num;
     integer reference_num;
