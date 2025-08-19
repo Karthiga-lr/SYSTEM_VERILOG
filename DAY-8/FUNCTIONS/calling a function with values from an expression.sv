@@ -3,6 +3,6 @@ module func_with_exp;
   return a*b;
   endfunction
   initial begin
-    $display("value = %0d",2+mul(5,6));  //expression 
+    $display("value = %0d",2+mul(5,6)); // function is not stored in a varaiable, it is directly called from the expression
   end
 endmodule
