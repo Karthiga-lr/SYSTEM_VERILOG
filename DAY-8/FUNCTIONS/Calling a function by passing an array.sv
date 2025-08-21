@@ -1,14 +1,18 @@
 module array_tb;
-  function automatic void increment(ref int x);
-    $display("Inside function before increment: x = %0d",x);
-    x=x+1;
-    $display("Inside function after increment: x = %0d",x);
+  function automatic void single_arr(ref int arr[]);
+    foreach(arr[i]) arr[i] = i+1;
+  endfunction
+
+  function automatic void double_arr(ref int arr[]);
+    foreach(arr[i]) arr[i] = i*2;
   endfunction
   
   initial begin
-    int a = 10;
-    $display("Before calling function: a = %0d",a);
-    increment(a);
-    $display("After calling function: a = %0d",a);
+    int nums[];         // dynamic array
+    nums = new[5];      // allocate 5 elements
+    single_arr(nums);
+    $display("nums = %0p", nums);
+    double_arr(nums);
+    $display("nums = %0p", nums);
   end
 endmodule
