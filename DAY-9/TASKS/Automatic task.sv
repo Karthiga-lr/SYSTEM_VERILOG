@@ -15,4 +15,4 @@ int result;
       result = n*temp;
     end
   endtask
-endmodule  
+endmodule
