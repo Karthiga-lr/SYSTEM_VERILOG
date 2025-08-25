@@ -1,4 +1,5 @@
 module task_from_func;
+
   initial begin
     $display("Example fork join");
     #1  $display("calling func_start()", $time);
@@ -14,12 +15,12 @@ module task_from_func;
     join_none       
   endfunction
   task task_A();
-    #2 $display("[%0t] Task A started",  $time);
-    #7 $display("[%0t] Task A finished", $time);
+    #2 $display("Task A started",  $time);
+    #7 $display("Task A finished", $time);
   endtask
 
   task task_B();
-    #3 $display("[%0t] Task B started",  $time);
-    #4 $display("[%0t] Task B finished", $time);
+    #3 $display("Task B started",  $time);
+    #4 $display("Task B finished", $time);
   endtask
 endmodule
