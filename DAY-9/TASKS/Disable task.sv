@@ -5,8 +5,6 @@ module disable_threads;
       #15 disable run_task.t1;
     join
   end
-
-
 task run_task();
   begin:t1
     $display("@0t ns: Thread 1 started", $time);
