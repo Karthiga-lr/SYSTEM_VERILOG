@@ -11,7 +11,7 @@ task run_task();
   begin:t1
     $display("@0t ns: Thread 1 started", $time);
     #30;
-    $display("@0t ns: Thread 1 finished", $time);
+    $display("@0t ns: Thread 1 finished", $time); //kills it
   end:t1
   
   begin:t2
