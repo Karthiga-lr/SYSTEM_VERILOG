@@ -8,6 +8,6 @@ module tb;
   endtask
   endclass
   initial begin
-   student:: progress_report();
+    student:: progress_report(); //no object
   end
 endmodule
