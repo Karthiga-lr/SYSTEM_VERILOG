@@ -10,7 +10,5 @@ endtask
 module tb;
   initial begin
     $display("student marks = %0d", student::marks);
-    //student::mark_result(95);
-    //$display("Updated student marks = %0d",student::marks);
   end
 endmodule
