@@ -28,7 +28,6 @@ function void student::evaluate(int score);
     $display("Grade: F");
     $display("Work harder and dont give up!");
   end
-
   $display("---- Evaluation Finished ----");
 endfunction
 module tb;
