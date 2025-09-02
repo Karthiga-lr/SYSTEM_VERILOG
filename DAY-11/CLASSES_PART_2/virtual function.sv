@@ -6,7 +6,7 @@ class packet;
     a="Team";
     b=10;
   endfunction 
-  virtual function void display();
+  virtual function void display(); //Virtual (runtime polymorphism) - child function executes
     $display("a=%0s",a);
     $display("b=%0d",b);
   endfunction
