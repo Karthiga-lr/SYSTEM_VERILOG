@@ -1,4 +1,4 @@
-class worker;
+/class worker;
   virtual task do_work();
     $display("@%0t ns: Generic worker starts work", $time);
     #5;
