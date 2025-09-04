@@ -1,4 +1,3 @@
-
 // Code your design here
 class shape;
   int width,height;
