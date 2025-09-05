@@ -1,14 +1,14 @@
 virtual class A;
   int a,b,c;
-  pure virtual function void display();
+  pure virtual function void display(); // it is a placeholder (no implementation in base class)
   pure virtual task sum();
 endclass
 class B extends A;
-  virtual function void display();
+  function void display();
     a = 10;
     $display("Value of a = %0d, b = %0d. c= %0d",a,b,c);
   endfunction
-  virtual task sum();
+task sum();
     c = a+b;
     $display("Value of a=%0d, b=%0d, c=%0d",a,b,c);
   endtask
