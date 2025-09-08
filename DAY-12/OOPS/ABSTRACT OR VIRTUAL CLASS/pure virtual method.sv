@@ -29,4 +29,3 @@ module tb;
     s.draw();
   end
   endmodule 
-  
