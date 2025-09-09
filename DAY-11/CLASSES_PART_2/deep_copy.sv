@@ -34,4 +34,3 @@ module tb;
   s2.display();
   end
 endmodule
-  
