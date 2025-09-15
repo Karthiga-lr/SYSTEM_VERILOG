@@ -3,8 +3,8 @@ module continue_tb;
   initial begin
     for (int i = 0; i<5; i++)begin
       if(i == 2)begin
+        $display("Calling continue");
         continue;
-        $display("Iteration = %0d",i);
       end
       $display("Iteration = %0d",i);
       end
