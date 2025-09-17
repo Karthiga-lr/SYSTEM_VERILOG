@@ -8,7 +8,7 @@ module waitorder;
   end
 
   initial begin
-    #5 ->e2;
+    #5 ->e2; // error because of wrong triggering order
     #10 ->e1;
     #15 ->e3;
   end
