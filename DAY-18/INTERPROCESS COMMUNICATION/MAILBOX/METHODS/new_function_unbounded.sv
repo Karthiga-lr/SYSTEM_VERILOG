@@ -1,4 +1,3 @@
-
 class A;
   int a;
   int i;
@@ -8,13 +7,16 @@ class A;
     this.m = m1;
   endfunction
   
-  task check();
+  function void check();
     
     if(m==null)
       $display("Mailbox is not create");
     else
       $display("Mailbox is created");
-    for(i =0; i<=5; i++)begin
+    
+  endfunction
+  task tr_data();
+    for(i =0; i<3; i++)begin
       a++;
       $display("Iteration = %0d",i);
           $display("value of a = %0d",a);
@@ -22,6 +24,7 @@ class A;
       m.put(a);
     $display("value of a = %0d",a);
   endtask
+  
 endclass
 
 module tb;
@@ -30,8 +33,9 @@ module tb;
   
   initial begin
     a1 = new(mb);
-    repeat(5)begin
-      a1.check();
+    a1.check();
+    repeat(3)begin
+      a1.tr_data();
     end
   end
 endmodule
