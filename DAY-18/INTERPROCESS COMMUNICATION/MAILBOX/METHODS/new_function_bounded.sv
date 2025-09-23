@@ -7,8 +7,7 @@ class A;
     this.m = m1;
   endfunction
   
-  task check();
-    
+  task check();  
     if(m==null)
       $display("Mailbox is not create");
     else
