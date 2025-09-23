@@ -26,7 +26,6 @@ class A;
   endtask
   
 endclass
-
 module tb;
   A a1;
   mailbox mb = new();
