@@ -48,8 +48,7 @@ class B;
   m.get(student_name);
   m.get(subject);
   $display("Student name = %0s, subject =%0s",student_name,subject);
-  endtask
-  
+  endtask 
 endclass
 
 module tb;
