@@ -12,7 +12,7 @@ module seq_formal_args_tb;
     #10 a = 1; b = 1;   
     #20 $finish;
   end
-  sequence notype_seq(X, Y);
+  sequence notype_seq(bit X, bit Y);
     X && Y;   
   endsequence
 
