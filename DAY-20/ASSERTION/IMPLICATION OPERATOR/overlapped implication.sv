@@ -6,10 +6,10 @@ module overlapped_implication_tb;
 
   initial begin
     a = 0; b = 0;
-    #12 a = 1; b = 1;   
+    #12 a = 1; b = 1; //pass  
     #10 a = 1; b = 0;   
     #10 a = 0; b = 1;   
-    #10 a = 1; b = 1;   
+    #10 a = 1; b = 1; //pass  
     #20 $finish;
   end
   
