@@ -32,7 +32,7 @@ module multiple_seq;
     endproperty
     
     assert property(comb_prop)
-      $display("%0t pass:start->done with valid&ready",$time);
+      $display("%0t pass:start->done with valid&ready",$time); // this line executes 35 ns
       else 
-        $error("%0t Fail: condition not met",$time);
+        $error("%0t Fail: condition not met",$time);// this line executes 65 ns
       endmodule
