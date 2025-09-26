@@ -23,5 +23,3 @@ module static_delay;
     else
     $display("Fail at time %0t",$time); 
     endmodule
-      
-  
