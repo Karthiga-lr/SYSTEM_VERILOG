@@ -33,4 +33,3 @@ module countones;
       $dumpvars();
     end
     endmodule
-    
