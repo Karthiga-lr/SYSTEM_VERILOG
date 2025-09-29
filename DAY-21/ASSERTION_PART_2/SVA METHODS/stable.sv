@@ -20,7 +20,7 @@ module stable;
   end
   
   property p;
-    @(posedge clk)a|->$stable(b); // previous posedge clk b should be equal to next posedge clk b
+    @(posedge clk)a|->$stable(b); 
   endproperty
   
   assert property(p)
@@ -33,4 +33,3 @@ module stable;
       $dumpvars();
     end
     endmodule
-    
